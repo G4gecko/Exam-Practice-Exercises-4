@@ -1,9 +1,9 @@
 /**
- * File: csci1302/ch16/MileageCalculator.java
+ * File: MileageCalculatorNoConversion.java
  * Package: ch16
- * @author Christopher Williams
- * Created on: Apr 12, 2017
- * Last Modified: Apr 15, 2019
+ * @author Timothy McCarty
+ * Created on: Apr 12, 2022
+ * Last Modified: Apr 12, 2022
  * Description:  
  */
 package ch16;
