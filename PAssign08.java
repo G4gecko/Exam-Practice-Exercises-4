@@ -1,12 +1,12 @@
 /**
- * File: ExamPractice4.java
+ * File: PAssign08.java
  * Package: ch16
  * @author Timothy McCarty
- * Created on: Apr 12, 2022
- * Last Modified: Apr 12, 2022
- * Description:  
+ * Created on: Apr 16, 2022
+ * Last Modified: Apr 16, 2022
+ * Description: A calculator used to determine MPG or L/100M. It has been changed to use a combo box while retaining its original functionality.
  */
-package ch16;
+package Projects;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class ExamPractice4 extends Application {
+public class PAssign08 extends Application {
 	// default values/strings
     private double txtWidth = 125.0;
     private String defaultCalc = String.format("%.2f", 0.00);
@@ -80,6 +80,8 @@ public class ExamPractice4 extends Application {
         // register action handlers
         
         btnCalc.setOnAction(e -> calcMileage());
+        tfDistance.setOnKeyReleased(e -> calcMileage());
+        tfCapacity.setOnKeyReleased(e -> calcMileage());
         cbo.setOnAction(e -> {
         	changeLabels();
         	changeValues();
@@ -164,15 +166,11 @@ public class ExamPractice4 extends Application {
     	if (cbo.getValue() == altResult) {
     		tfDistance.setText(String.format("%.2f", Double.parseDouble(tfDistance.getText()) * 1.60934));
     		tfCapacity.setText(String.format("%.2f", Double.parseDouble(tfCapacity.getText()) * 3.78541));
-    		if (tfResult.getText() != "null" && Double.parseDouble(tfResult.getText()) != 0) {
     			calcMileage();
-    		}
     	} else {
     		tfDistance.setText(String.format("%.2f", Double.parseDouble(tfDistance.getText()) / 1.60934));
     		tfCapacity.setText(String.format("%.2f", Double.parseDouble(tfCapacity.getText()) / 3.78541));
-    		if (tfResult.getText() != "null" && Double.parseDouble(tfResult.getText()) != 0) {
-    			calcMileage();
-    		}
+    		calcMileage();
     	}
     }
 	
@@ -182,4 +180,3 @@ public class ExamPractice4 extends Application {
 	}
 
 }
-
